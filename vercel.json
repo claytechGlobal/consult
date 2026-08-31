@@ -2,6 +2,10 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/client", "destination": "/exact-cc-services-complete?mode=client" },
+    { "source": "/admin", "destination": "/exact-cc-services-complete?mode=admin" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
