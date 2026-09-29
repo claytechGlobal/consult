@@ -499,56 +499,6 @@ section{ padding:104px 0; }
   .info-row{ display:flex; gap:1em; padding:1rem 0; border-bottom:1px solid var(--line-on-navy); }
   .info-row:last-child{ border-bottom:none; }
 
-.promo-overlay{
-  position:fixed; inset:0; z-index:500;
-  display:flex; align-items:center; justify-content:center;
-  padding:22px;
-  background:rgba(15,27,51,.68);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-.promo-overlay[hidden]{ display:none !important; }
-.promo-card{
-  width:min(430px,100%);
-  background:var(--cream);
-  border-radius:26px;
-  overflow:hidden;
-  box-shadow:0 32px 80px -18px rgba(10,20,40,.55);
-  position:relative;
-  animation:promoIn .45s var(--ease);
-}
-@keyframes promoIn{
-  from{ opacity:0; transform:translateY(18px) scale(.98); }
-  to{ opacity:1; transform:none; }
-}
-.promo-close{
-  position:absolute; top:12px; right:12px; z-index:2;
-  width:36px; height:36px; border:0; border-radius:999px;
-  background:rgba(255,255,255,.12); color:#fff; cursor:pointer;
-  font-size:1.35rem; line-height:1; display:flex; align-items:center; justify-content:center;
-}
-.promo-close:hover{ background:rgba(255,255,255,.22); }
-.promo-top{
-  background:linear-gradient(160deg,var(--navy-900) 0%,#1a2d52 100%);
-  padding:32px 28px 24px; color:#fff;
-}
-.promo-top .eyebrow{ color:#E8DCC8; margin-bottom:.7em; }
-.promo-top .eyebrow::before{ background:#C49A5C; }
-.promo-top h2{ color:#fff; font-size:clamp(1.55rem,3vw,1.95rem); margin:0 0 .45em; }
-.promo-top p{ color:rgba(248,242,232,.92); margin:0; font-size:.95rem; }
-.promo-body{ padding:22px 28px 28px; }
-.promo-price-row{ display:flex; align-items:baseline; gap:12px; margin-bottom:8px; }
-.promo-now{ font-family:var(--font-display); font-size:2.1rem; font-weight:620; color:var(--navy-900); line-height:1; }
-.promo-now span{ font-family:var(--font-body); font-size:.95rem; font-weight:600; color:var(--charcoal-60); }
-.promo-was{ color:var(--charcoal-60); text-decoration:line-through; font-size:.95rem; }
-.promo-note{ color:var(--charcoal-60); font-size:.88rem; margin:0 0 1.3rem; }
-.promo-card .btn{ margin-bottom:.55rem; }
-.promo-skip{
-  display:block; width:100%; text-align:center; background:none; border:0;
-  color:var(--charcoal-60); font-size:.88rem; cursor:pointer; padding:.4em; font-family:inherit;
-}
-.promo-skip:hover{ color:var(--navy-900); }
-
 .page-view[hidden]{ display:none; }
 .page-view{padding:0!important;margin:0;}
 .reveal,.reveal.is-visible{ opacity:1; transform:none; }
@@ -1406,49 +1356,6 @@ section{ padding:104px 0; }
   </div>
 </footer>
 <div class="mobile-cta"><a class="btn btn-primary btn-block" href="#contact/booking">Book a Consultation</a></div>
-<div id="promo-labor-day" class="promo-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="promo-title">
-  <div class="promo-card">
-    <button class="promo-close" type="button" data-promo-close aria-label="Close offer">&times;</button>
-    <div class="promo-top">
-      <p class="eyebrow">Labor Day offer</p>
-      <h2 id="promo-title">Place Connect at a Labor Day rate</h2>
-      <p>Subscribe now and keep vetted Tallahassee listings coming in — for $10.99 a month instead of $19.99.</p>
-    </div>
-    <div class="promo-body">
-      <div class="promo-price-row">
-        <div class="promo-now">$10.99<span>/month</span></div>
-        <div class="promo-was">$19.99</div>
-      </div>
-      <p class="promo-note">Billed monthly. Instant confirmation after checkout.</p>
-      <a class="btn btn-primary btn-block" href="https://buy.stripe.com/00w9AMfNU3FuaWe3A6cQU0e" target="_blank" rel="noopener" data-promo-close>Claim Labor Day rate</a>
-      <button class="promo-skip" type="button" data-promo-close>Maybe later</button>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  var overlay = document.getElementById('promo-labor-day');
-  if (!overlay) return;
-  var KEY = 'ecc-labor-day-promo';
-  function openPromo(){
-    overlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  function closePromo(){
-    overlay.hidden = true;
-    document.body.style.overflow = '';
-    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
-  }
-  overlay.addEventListener('click', function(e){ if (e.target === overlay) closePromo(); });
-  overlay.querySelectorAll('[data-promo-close]').forEach(function(el){ el.addEventListener('click', closePromo); });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !overlay.hidden) closePromo(); });
-  var force = false;
-  try { force = new URLSearchParams(location.search).get('promo') === '1'; } catch (e) {}
-  var dismissed = false;
-  try { dismissed = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
-  if (force || !dismissed) setTimeout(openPromo, 650);
-})();
-</script>
 </div>
 
 <div id="mode-client" hidden>
