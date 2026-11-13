@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exact Consulting and Concierge Services — Complete Prototype</title>
-<meta name="description" content="Public website, client portal, and admin portal for Exact Consulting and Concierge Services, all in one file.">
+<title>Exact Consulting and Concierge Services</title>
+<meta name="description" content="Exact Consulting and Concierge Services — Tallahassee housing concierge, client portal, and staff portal.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2216%22 fill=%22%2314213D%22/><circle cx=%2211%22 cy=%2220%22 r=%222.6%22 fill=%22%23B08D57%22/><circle cx=%2221%22 cy=%2212%22 r=%222.6%22 fill=%22%23E4D9C3%22/><path d=%22M11 20 21 12%22 stroke=%22%23E4D9C3%22 stroke-width=%221.4%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,55 +12,6 @@
 <style>
 
 body{margin:0;background:#FBF8F2;color:#1C1B18;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-
-
-#mode-switch-bar{
-  position:fixed;
-  bottom:22px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:400;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:10px 16px 10px 18px;
-  background:rgba(10,22,40,.94);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  color:#FBF8F2;
-  border:1px solid rgba(196,154,92,.38);
-  border-radius:999px;
-  box-shadow:0 14px 44px rgba(0,0,0,.32);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  max-width:calc(100vw - 28px);
-  overflow-x:auto;
-}
-#mode-switch-bar .msw-label{
-  font-size:.68rem;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  color:rgba(248,242,232,.72);
-  margin-right:8px;
-  padding-right:12px;
-  white-space:nowrap;
-  font-weight:600;
-  border-right:1px solid rgba(255,255,255,.14);
-}
-#mode-switch-bar button{
-  font-family:inherit; cursor:pointer; white-space:nowrap;
-  background:transparent; border:1px solid rgba(251,248,242,.22); color:#FBF8F2;
-  padding:.5em 1.05em; border-radius:999px; font-size:.8rem; font-weight:600;
-  transition:background .2s ease, border-color .2s ease, transform .2s ease;
-}
-#mode-switch-bar button.active{ background:linear-gradient(135deg,#C49A5C,#A67F45); border-color:#C49A5C; color:#fff; box-shadow:0 4px 14px rgba(176,141,87,.4); }
-#mode-switch-bar button:not(.active):hover{ background:rgba(251,248,242,.1); border-color:rgba(251,248,242,.4); }
-@media (max-width:640px){
-  #mode-switch-bar{bottom:16px;padding:8px 12px;gap:5px;}
-  #mode-public:not([hidden]) ~ #mode-switch-bar{bottom:76px;}
-  #mode-switch-bar .msw-label{display:none;}
-  #mode-switch-bar button{font-size:.76rem;padding:.45em .85em;}
-  body{padding-bottom:72px;}
-}
 
 .mode-panel[hidden]{ display:none; }
 
@@ -527,9 +478,6 @@ section{ padding:104px 0; }
     --shadow-card:0 10px 26px -16px rgba(15,27,51,.28);
   }#mode-client *, #mode-client *::before, #mode-client *::after {box-sizing:border-box;}#mode-client #client-app { font-family:var(--font-body); color:var(--charcoal); background:var(--cream); min-height:100vh; }#mode-client h1, #mode-client h2, #mode-client h3 { font-family:var(--font-display); color:var(--navy-900); margin:0 0 .3em; font-weight:600; }#mode-client p { margin:0 0 .8em; color:var(--charcoal-80); }#mode-client button { font-family:inherit; cursor:pointer; }#mode-client input, #mode-client select, #mode-client textarea { font-family:inherit; }#mode-client .wrap { max-width:1180px; margin:0 auto; padding:0 22px 60px; }#mode-client .topbar { background:var(--navy-900); color:var(--white); padding:16px 22px; }#mode-client .topbar-inner { max-width:1180px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; }#mode-client .brand { display:flex; align-items:center; gap:.6em; font-family:var(--font-display); font-weight:600; font-size:1.05rem; }#mode-client .brand img { height:30px; width:auto; }#mode-client .badge-tag { background:rgba(228,217,195,.18); color:var(--beige-200); font-size:.72rem; padding:.3em .8em; border-radius:999px; letter-spacing:.04em; text-transform:uppercase; }#mode-client .signout-btn { background:transparent; border:1px solid rgba(255,255,255,.3); color:var(--white); padding:.5em 1em; border-radius:999px; font-size:.82rem; }#mode-client .signout-btn:hover { background:rgba(255,255,255,.1); }#mode-client .gate { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px; }#mode-client .gate-card { background:var(--white); border-radius:var(--radius-md); box-shadow:var(--shadow-card); padding:2.4rem; max-width:420px; width:100%; }#mode-client .gate-card h1 { font-size:1.5rem; text-align:center; }#mode-client .gate-card > p { text-align:center; }#mode-client .field { display:grid; gap:.3rem; margin-bottom:.9rem; }#mode-client .field label { font-size:.78rem; font-weight:600; color:var(--navy-900); }#mode-client .field input, #mode-client .field select, #mode-client .field textarea { padding:.7em .9em; border-radius:var(--radius-sm); border:1px solid var(--line); font-size:.92rem; width:100%; }#mode-client .gate-note { background:var(--beige-100); border-radius:var(--radius-sm); padding:.8rem 1rem; font-size:.78rem; color:var(--charcoal-60); margin-top:1rem; }#mode-client .tabs { display:flex; gap:6px; overflow-x:auto; padding:18px 0 4px; border-bottom:1px solid var(--line); margin-bottom:24px; }#mode-client .tab-btn { background:none; border:none; padding:.7em 1.1em; border-radius:999px 999px 0 0; font-weight:600; font-size:.88rem; color:var(--charcoal-60); white-space:nowrap; }#mode-client .tab-btn.active { background:var(--navy-900); color:var(--white); }#mode-client .panel { background:var(--white); border-radius:var(--radius-md); box-shadow:var(--shadow-card); border:1px solid var(--line); padding:1.6rem; margin-bottom:20px; }#mode-client .btn { display:inline-flex; align-items:center; gap:.4em; padding:.75em 1.4em; border-radius:999px; font-weight:600; font-size:.88rem; border:1px solid transparent; text-decoration:none; }#mode-client .btn-primary { background:var(--brass); color:var(--white); }#mode-client .btn-primary:hover { background:var(--brass-dark); }#mode-client .btn-ghost { background:transparent; border-color:var(--navy-900); color:var(--navy-900); }#mode-client .btn-ghost:hover { background:var(--navy-900); color:var(--white); }#mode-client .btn-sm { padding:.5em 1em; font-size:.8rem; }#mode-client .btn-block { width:100%; justify-content:center; }#mode-client .stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:20px; }#mode-client .stat-card { background:var(--white); border-radius:var(--radius-md); padding:1.3rem; box-shadow:var(--shadow-card); border:1px solid var(--line); }#mode-client .stat-num { font-family:var(--font-display); font-size:1.9rem; color:var(--navy-900); font-weight:600; }#mode-client .stat-label { font-size:.78rem; color:var(--charcoal-60); text-transform:uppercase; letter-spacing:.04em; }#mode-client .sub-card { border-radius:var(--radius-md); padding:1.6rem; }#mode-client .sub-card.active { background:linear-gradient(135deg,#1F3157,#14213D); color:var(--white); }#mode-client .sub-card.inactive { background:var(--beige-100); }#mode-client .sub-card p { color:inherit; opacity:.85; }#mode-client .filter-bar { display:flex; flex-wrap:wrap; gap:10px; align-items:end; margin-bottom:1.4rem; }#mode-client .filter-field { display:grid; gap:.3rem; flex:1; min-width:130px; }#mode-client .filter-field label { font-size:.7rem; font-weight:600; text-transform:uppercase; color:var(--charcoal-60); }#mode-client .filter-field input, #mode-client .filter-field select { padding:.6em .8em; border-radius:var(--radius-sm); border:1px solid var(--line); font-size:.85rem; }#mode-client .filter-field.chk { flex-direction:row; align-items:center; gap:.5em; flex:0 0 auto; }#mode-client .listing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; }#mode-client .listing-card { background:var(--white); border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-card); }#mode-client .listing-photo { height:150px; position:relative; }#mode-client .listing-photo img { width:100%; height:100%; object-fit:cover; display:block; }#mode-client .save-btn { position:absolute; top:10px; right:10px; width:34px; height:34px; border-radius:50%; background:rgba(251,248,242,.92); border:none; display:flex; align-items:center; justify-content:center; font-size:1.05rem; }#mode-client .listing-badge { position:absolute; top:10px; left:10px; background:var(--navy-900); color:var(--white); font-size:.65rem; font-weight:600; padding:.3em .7em; border-radius:999px; }#mode-client .listing-body { padding:1rem 1.1rem 1.2rem; }#mode-client .listing-price { font-family:var(--font-display); font-size:1.15rem; color:var(--navy-900); font-weight:600; }#mode-client .listing-address { font-weight:600; color:var(--navy-900); font-size:.9rem; margin:.2rem 0; }#mode-client .listing-meta { display:flex; gap:10px; font-size:.78rem; color:var(--charcoal-60); }#mode-client .req-item { border:1px solid var(--line); border-radius:var(--radius-sm); padding:1rem 1.1rem; margin-bottom:.8rem; }#mode-client .pill { display:inline-block; padding:.25em .75em; border-radius:999px; font-size:.72rem; font-weight:600; }#mode-client .pill-pending { background:#FCEFD8; color:#8A5A17; }#mode-client .pill-confirmed { background:#DCE8F7; color:#1F4E8C; }#mode-client .pill-completed { background:#DCEFE0; color:#276B3F; }#mode-client .pill-cancelled { background:#F5DADA; color:#96302F; }#mode-client .empty { text-align:center; padding:2.5rem 1rem; color:var(--charcoal-60); }#mode-client .hidden { display:none !important; }#mode-client .toast { position:fixed; bottom:20px; right:20px; background:var(--navy-900); color:var(--white); padding:.8em 1.2em; border-radius:var(--radius-sm); font-size:.85rem; box-shadow:var(--shadow-card); z-index:200; opacity:0; transform:translateY(10px); transition:all .3s ease; }#mode-client .toast.show { opacity:1; transform:translateY(0); }
 
-@media (max-width:640px){
-  #mode-public:not([hidden]) ~ #mode-switch-bar{bottom:76px;}
-}
 </style>
 </head>
 <body>
@@ -1615,34 +1563,176 @@ document.querySelectorAll('#mode-public .chip').forEach(function(chip){
 
 </script>
 <script>
-if (!window.storage) {
+(function(){
+  var ADMIN_EMAIL = 'staff@exactcc.com';
+  var ADMIN_PASSWORD = 'exact2026';
+  var remote = false;
+
+  function usersKey(){ return 'exact-auth-users'; }
+  function readUsers(){
+    try { return JSON.parse(localStorage.getItem(usersKey()) || '[]'); } catch (e) { return []; }
+  }
+  function writeUsers(list){ localStorage.setItem(usersKey(), JSON.stringify(list)); }
+  function bufToHex(buf){
+    var bytes = new Uint8Array(buf);
+    var out = '';
+    for (var i = 0; i < bytes.length; i++) out += bytes[i].toString(16).padStart(2, '0');
+    return out;
+  }
+  function hashLocal(password, salt){
+    var useSalt = salt || bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(useSalt + ':' + password)).then(function(buf){
+      return { salt: useSalt, hash: bufToHex(buf) };
+    });
+  }
+  function seedLocalAdmin(){
+    var users = readUsers();
+    if (users.some(function(u){ return u.email === ADMIN_EMAIL; })) return Promise.resolve();
+    return hashLocal(ADMIN_PASSWORD).then(function(hashed){
+      users.push({ email: ADMIN_EMAIL, name: 'Staff', phone: '', role: 'admin', salt: hashed.salt, passHash: hashed.hash });
+      writeUsers(users);
+    });
+  }
+  function localSession(){
+    try { return JSON.parse(localStorage.getItem('exact-auth-session') || 'null'); } catch (e) { return null; }
+  }
+
+  window.ExactAuth = {
+    ready: seedLocalAdmin().then(function(){
+      return fetch('/api/auth', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'ping' }) })
+        .then(function(r){ return r.json(); })
+        .then(function(data){ remote = !!(data && data.ok && data.persistent); })
+        .catch(function(){ remote = false; });
+    }).then(function(){
+      if (remote) return;
+      var existing = false;
+      for (var i = 0; i < localStorage.length; i++) {
+        if ((localStorage.key(i) || '').indexOf('shared:listings:') === 0) { existing = true; break; }
+      }
+      if (existing) return;
+      var seed = [
+        {address:"412 Thomasville Rd, Unit 3B", neighborhood:"Midtown", price:1450, beds:1, baths:1, sqft:720, pet:true},
+        {address:"1820 Killearn Center Blvd", neighborhood:"Killearn Estates", price:1850, beds:3, baths:2, sqft:1340, pet:true},
+        {address:"905 W Gaines St, Unit 7", neighborhood:"Downtown", price:1195, beds:1, baths:1, sqft:610, pet:false},
+        {address:"3311 Merchants Row", neighborhood:"Southwood", price:2050, beds:3, baths:2.5, sqft:1580, pet:true},
+        {address:"2200 W Pensacola St, Unit 14", neighborhood:"Frenchtown", price:1050, beds:1, baths:1, sqft:560, pet:false},
+        {address:"610 Live Oak Plantation Rd", neighborhood:"Betton Hills", price:2200, beds:4, baths:3, sqft:2100, pet:true}
+      ];
+      seed.forEach(function(item, idx){
+        var id = 'L-seed-' + idx;
+        localStorage.setItem('shared:listings:' + id, JSON.stringify(Object.assign({ id:id, createdAt:new Date().toISOString() }, item)));
+      });
+    }),
+    usingServer: function(){ return remote; },
+    me: function(){
+      return this.ready.then(function(){
+        if (remote) {
+          return fetch('/api/auth', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'me' }) })
+            .then(function(r){ return r.json(); })
+            .then(function(data){ return data && data.user ? data.user : null; });
+        }
+        var session = localSession();
+        if (!session) return null;
+        var user = readUsers().find(function(u){ return u.email === session.email; });
+        if (!user) return null;
+        return { email: user.email, name: user.name, phone: user.phone || '', role: user.role };
+      });
+    },
+    logout: function(){
+      return this.ready.then(function(){
+        localStorage.removeItem('exact-auth-session');
+        if (!remote) return;
+        return fetch('/api/auth', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'logout' }) });
+      });
+    },
+    login: function(role, email, password){
+      email = String(email || '').trim().toLowerCase();
+      return this.ready.then(function(){
+        if (remote) {
+          return fetch('/api/auth', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'login', role: role, email: email, password: password }) })
+            .then(function(r){ return r.json(); });
+        }
+        var user = readUsers().find(function(u){ return u.email === email; });
+        if (!user || user.role !== role) return { ok:false, error:'Incorrect email or password.' };
+        return hashLocal(password, user.salt).then(function(hashed){
+          if (hashed.hash !== user.passHash) return { ok:false, error:'Incorrect email or password.' };
+          localStorage.setItem('exact-auth-session', JSON.stringify({ email: user.email, role: user.role }));
+          return { ok:true, user: { email: user.email, name: user.name, phone: user.phone || '', role: user.role } };
+        });
+      });
+    },
+    register: function(name, email, password, phone){
+      email = String(email || '').trim().toLowerCase();
+      name = String(name || '').trim();
+      phone = String(phone || '').trim();
+      return this.ready.then(function(){
+        if (!name || !email || !password) return { ok:false, error:'Name, email, and password are required.' };
+        if (password.length < 6) return { ok:false, error:'Use at least 6 characters for the password.' };
+        if (remote) {
+          return fetch('/api/auth', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'register', role:'client', name:name, email:email, password:password, phone:phone }) })
+            .then(function(r){ return r.json(); });
+        }
+        var users = readUsers();
+        if (users.some(function(u){ return u.email === email; })) return { ok:false, error:'An account with that email already exists. Sign in instead.' };
+        return hashLocal(password).then(function(hashed){
+          users.push({ email:email, name:name, phone:phone, role:'client', salt:hashed.salt, passHash:hashed.hash });
+          writeUsers(users);
+          localStorage.setItem('exact-auth-session', JSON.stringify({ email:email, role:'client' }));
+          localStorage.setItem('shared:clients:' + email, JSON.stringify({
+            email:email, name:name, phone:phone, subscribed:false, joinedAt:new Date().toISOString(), budget:'', neighborhoods:'', beds:0, pet:false
+          }));
+          return { ok:true, user:{ email:email, name:name, phone:phone, role:'client' } };
+        });
+      });
+    }
+  };
+
   window.storage = {
     get: function(key, shared) {
+      if (remote && shared) {
+        return fetch('/api/store', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ op:'get', key:key }) })
+          .then(function(r){ return r.json(); })
+          .then(function(data){ return data && data.value != null ? { value: JSON.stringify(data.value) } : null; });
+      }
       var k = (shared ? 'shared:' : 'local:') + key;
       var v = localStorage.getItem(k);
       return Promise.resolve(v !== null ? { value: v } : null);
     },
     set: function(key, val, shared) {
+      if (remote && shared) {
+        var parsed = null;
+        if (val !== null && val !== undefined) { try { parsed = JSON.parse(val); } catch (e) { parsed = val; } }
+        return fetch('/api/store', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ op:'set', key:key, value: parsed }) }).then(function(){ return null; });
+      }
       var k = (shared ? 'shared:' : 'local:') + key;
       if (val === null || val === undefined) { localStorage.removeItem(k); }
       else { localStorage.setItem(k, val); }
       return Promise.resolve();
     },
     delete: function(key, shared) {
+      if (remote && shared) {
+        return fetch('/api/store', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ op:'delete', key:key }) }).then(function(){ return null; });
+      }
       localStorage.removeItem((shared ? 'shared:' : 'local:') + key);
       return Promise.resolve();
     },
     list: function(prefix, shared) {
-      var pre = (shared ? 'shared:' : 'local:') + prefix;
+      if (remote && shared) {
+        return fetch('/api/store', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ op:'list', key:prefix }) })
+          .then(function(r){ return r.json(); })
+          .then(function(data){ return { keys: (data && data.keys) || [] }; });
+      }
+      var scope = shared ? 'shared:' : 'local:';
+      var pre = scope + prefix;
       var keys = [];
       for (var i = 0; i < localStorage.length; i++) {
         var k = localStorage.key(i);
-        if (k && k.indexOf(pre) === 0) keys.push(k.slice(pre.length));
+        if (k && k.indexOf(pre) === 0) keys.push(k.slice(scope.length));
       }
       return Promise.resolve({ keys: keys });
     }
   };
-}
+})();
 
 
 (function(){
@@ -1694,7 +1784,7 @@ if (!window.storage) {
     const tabs = [['overview','Overview'],['browse','Browse Listings'],['saved','Saved'],['consult','Consultations'],['profile','Profile']];
     app.innerHTML = `
       <div class="topbar"><div class="topbar-inner">
-        <div class="brand"><img src="${LOGO_ICON}" alt=""> Client Portal <span class="badge-tag">Prototype</span></div>
+        <div class="brand"><img src="${LOGO_ICON}" alt=""> Client Portal</div>
         <button class="signout-btn" id="client-signout">Sign Out</button>
       </div></div>
       <div class="wrap">
@@ -1702,42 +1792,48 @@ if (!window.storage) {
         <div id="client-tab-content"></div>
       </div>
     `;
-    document.getElementById('client-signout').onclick = async () => { await sSet('session', null, false); me = null; render(); };
+    document.getElementById('client-signout').onclick = async () => { await window.ExactAuth.logout(); me = null; render(); };
     app.querySelectorAll('.tab-btn').forEach(b => b.onclick = () => { tab = b.dataset.tab; render(); });
     renderTab();
   }
 
+  let clientMode = 'signin';
   function renderGate(){
     app.innerHTML = `
       <div class="gate"><div class="gate-card">
         <img src="${LOGO_ICON}" alt="" style="height:56px; display:block; margin:0 auto 1rem;">
         <h1>Client Portal</h1>
-        <p>Sign in to browse full listings, save favorites, and manage your consultations.</p>
-        <div class="field"><label>Full name</label><input id="g-name" placeholder="Jane Smith"></div>
-        <div class="field"><label>Email</label><input id="g-email" type="email" placeholder="you@email.com"></div>
-        <div class="field"><label>Phone (optional)</label><input id="g-phone" placeholder="(850) 555-0100"></div>
-        <button class="btn btn-primary btn-block" id="g-enter">Continue</button>
-        <div class="gate-note">This is a prototype sign-in for demonstration — it doesn't use a password or verify your email. Replace with real authentication before handling real client accounts.</div>
+        <p>${clientMode === 'signin' ? 'Sign in to browse listings, save favorites, and manage your consultations.' : 'Create an account to browse listings and book consultations.'}</p>
+        ${clientMode === 'signup' ? '<div class="field"><label>Full name</label><input id="g-name" placeholder="Jane Smith"></div>' : ''}
+        <div class="field"><label>Email</label><input id="g-email" type="email" placeholder="you@email.com" autocomplete="username"></div>
+        <div class="field"><label>Password</label><input id="g-password" type="password" placeholder="Password" autocomplete="${clientMode === 'signin' ? 'current-password' : 'new-password'}"></div>
+        ${clientMode === 'signup' ? '<div class="field"><label>Phone (optional)</label><input id="g-phone" placeholder="(850) 555-0100"></div>' : ''}
+        <button class="btn btn-primary btn-block" id="g-enter">${clientMode === 'signin' ? 'Sign In' : 'Create Account'}</button>
+        <button class="btn btn-ghost btn-block" id="g-switch" style="margin-top:10px;">${clientMode === 'signin' ? 'Need an account? Create one' : 'Already have an account? Sign in'}</button>
       </div></div>
     `;
+    document.getElementById('g-switch').onclick = () => { clientMode = clientMode === 'signin' ? 'signup' : 'signin'; renderGate(); };
     document.getElementById('g-enter').onclick = async () => {
-      const name = document.getElementById('g-name').value.trim();
-      const email = document.getElementById('g-email').value.trim().toLowerCase();
-      const phone = document.getElementById('g-phone').value.trim();
-      if (!name || !email) { toast('Name and email are required'); return; }
-      let rec = await sGet('clients:' + email, true);
-      if (!rec) {
-        rec = { email, name, phone, subscribed:false, joinedAt: new Date().toISOString(), budget:'', neighborhoods:'', beds:0, pet:false };
+      const email = document.getElementById('g-email').value.trim();
+      const password = document.getElementById('g-password').value;
+      let result;
+      if (clientMode === 'signup') {
+        const name = document.getElementById('g-name').value.trim();
+        const phone = document.getElementById('g-phone').value.trim();
+        result = await window.ExactAuth.register(name, email, password, phone);
       } else {
-        rec.name = name;
-        if (phone) rec.phone = phone;
+        result = await window.ExactAuth.login('client', email, password);
       }
-      await sSet('clients:' + email, rec, true);
-      await sSet('session', { email }, false);
-      me = rec;
+      if (!result || !result.ok) { toast((result && result.error) || 'Could not sign in'); return; }
+      me = await sGet('clients:' + result.user.email, true);
+      if (!me) {
+        me = { email: result.user.email, name: result.user.name, phone: result.user.phone || '', subscribed:false, joinedAt: new Date().toISOString(), budget:'', neighborhoods:'', beds:0, pet:false };
+        await sSet('clients:' + me.email, me, true);
+      }
       await Promise.all([loadListings(), loadFavorites(), loadRequests()]);
       render();
     };
+    document.getElementById('g-password').addEventListener('keydown', function(e){ if (e.key === 'Enter') document.getElementById('g-enter').click(); });
   }
 
   function renderTab(){
@@ -1934,9 +2030,10 @@ if (!window.storage) {
 
   async function init(){
     app.innerHTML = `<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; color:var(--charcoal-60);">Loading client portal…</div>`;
-    const session = await sGet('session', false);
-    if (session && session.email) {
+    const session = await window.ExactAuth.me();
+    if (session && session.role === 'client') {
       me = await sGet('clients:' + session.email, true);
+      if (!me) me = { email: session.email, name: session.name, phone: session.phone || '', subscribed:false, joinedAt: new Date().toISOString(), budget:'', neighborhoods:'', beds:0, pet:false };
     }
     if (me) {
       await Promise.all([loadListings(), loadFavorites(), loadRequests()]);
@@ -1952,7 +2049,6 @@ if (!window.storage) {
 
 (function(){
   const LOGO_ICON = window.SITE_IMAGES.logoIcon;
-  const ADMIN_PASSCODE = "exact2026";
 
   const app = document.getElementById('admin-app');
   let state = { tab: 'dashboard', listings: [], clients: [], requests: [] };
@@ -2007,13 +2103,13 @@ if (!window.storage) {
   }
 
   function render(){
-    if (!sessionStorage.getItem('exact-admin-authed')) { renderGate(); return; }
+    if (!adminUser) { renderGate(); return; }
     const tabs = [
       ['dashboard','Dashboard'], ['listings','Listings'], ['clients','Clients'], ['consultations','Consultations']
     ];
     app.innerHTML = `
       <div class="topbar"><div class="topbar-inner">
-        <div class="brand"><img src="${LOGO_ICON}" alt=""> Admin Portal <span class="badge-tag">Prototype</span></div>
+        <div class="brand"><img src="${LOGO_ICON}" alt=""> Admin Portal</div>
         <button class="signout-btn" id="admin-signout">Sign Out</button>
       </div></div>
       <div class="wrap">
@@ -2023,28 +2119,32 @@ if (!window.storage) {
         <div id="admin-tab-content"></div>
       </div>
     `;
-    document.getElementById('admin-signout').onclick = () => { sessionStorage.removeItem('exact-admin-authed'); render(); };
+    document.getElementById('admin-signout').onclick = async () => { adminUser = null; await window.ExactAuth.logout(); render(); };
     app.querySelectorAll('.tab-btn').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; render(); });
     renderTab();
   }
 
+  let adminUser = null;
   function renderGate(){
     app.innerHTML = `
       <div class="gate">
         <div class="gate-card">
           <img src="${LOGO_ICON}" alt="" style="height:56px; margin-bottom:1rem;">
           <h1 style="font-size:1.5rem;">Staff Access</h1>
-          <p>Enter the access code to manage listings, clients, and consultation requests.</p>
-          <input type="password" id="passcode" placeholder="Access code">
+          <p>Sign in to manage listings, clients, and consultation requests.</p>
+          <input type="email" id="staff-email" placeholder="Email" autocomplete="username" style="margin-bottom:0;">
+          <input type="password" id="passcode" placeholder="Password" autocomplete="current-password">
           <button class="btn btn-primary" id="enter-btn" style="width:100%; justify-content:center;">Enter Admin Portal</button>
-          <div class="gate-warning">This is a prototype access gate for demonstration only — it is <strong>not secure authentication</strong>. Replace with real staff login (e.g. via a backend auth provider) before handling real client data.</div>
         </div>
       </div>
     `;
-    const tryEnter = () => {
-      const val = document.getElementById('passcode').value;
-      if (val === ADMIN_PASSCODE) { sessionStorage.setItem('exact-admin-authed','1'); init(); }
-      else toast('Incorrect access code');
+    const tryEnter = async () => {
+      const result = await window.ExactAuth.login('admin', document.getElementById('staff-email').value, document.getElementById('passcode').value);
+      if (!result || !result.ok) { toast((result && result.error) || 'Incorrect email or password'); return; }
+      adminUser = result.user;
+      await ensureSeed();
+      await loadAll();
+      render();
     };
     document.getElementById('enter-btn').onclick = tryEnter;
     document.getElementById('passcode').addEventListener('keydown', e => { if (e.key==='Enter') tryEnter(); });
@@ -2236,8 +2336,10 @@ if (!window.storage) {
 
   async function init(){
     app.innerHTML = `<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; color:var(--charcoal-60);">Loading admin portal…</div>`;
-    await ensureSeed();
-    await loadAll();
+    const session = await window.ExactAuth.me();
+    adminUser = session && session.role === 'admin' ? session : null;
+    if (!window.ExactAuth.usingServer() || adminUser) await ensureSeed();
+    if (adminUser) await loadAll();
     render();
   }
 
@@ -2245,24 +2347,17 @@ if (!window.storage) {
 })();
 
 </script>
-<div id="mode-switch-bar">
-  <span class="msw-label">Demo views</span>
-  <button data-mode="public" class="active">Public Website</button>
-  <button data-mode="client">Client Portal</button>
-  <button data-mode="admin">Admin Portal</button>
-</div>
 <script>
 
 (function(){
-  var buttons = document.querySelectorAll('#mode-switch-bar button');
   var panels = { public: document.getElementById('mode-public'), client: document.getElementById('mode-client'), admin: document.getElementById('mode-admin') };
   function setMode(mode){
     if (!panels[mode]) mode = 'public';
     Object.keys(panels).forEach(function(k){ if (panels[k]) panels[k].hidden = (k !== mode); });
-    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.mode === mode); });
     window.scrollTo(0,0);
+    if (mode === 'client') document.title = 'Client Portal | Exact Consulting and Concierge Services';
+    if (mode === 'admin') document.title = 'Admin Portal | Exact Consulting and Concierge Services';
   }
-  buttons.forEach(function(b){ b.addEventListener('click', function(){ setMode(b.dataset.mode); }); });
   var params = new URLSearchParams(window.location.search);
   var initial = params.get('mode');
   var path = location.pathname.replace(/\/$/, '');
